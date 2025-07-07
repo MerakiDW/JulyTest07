@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout with Header and Footer</title>
+	<title>McAlvany Sales</title>
+	<link href="css/McAlvany_Style01.css" rel="stylesheet" type="text/css">
+
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* 100vh equals 100% of the viewport height. */
+            /* background-color: #f4f4f4; */
+			/*background-color: #D9EDFB;*/
+			background-color: white;
+        }
+
+        /* Main wrapper grid with header, content, and footer */
+        .wrapper {
+            display: grid;
+            grid-template-rows: auto 1fr auto; /* Header, content, and footer rows */
+            width: 95%;
+            /* max-width: 1200px; */
+            /* height: 90vh; */
+			height: 95%;
+            gap: 2px; /*Original was gap: 10px;*/  
+            /*background-color:#C0C0C0;*/
+			background-color:white;
+			height:100vh; /* Set to ??? to get the background to go completely to the bottom */
+            padding: 10px;
+            /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */  /* Dont want the box shadow. */
+        }
+
+        /* Header grid with logo and nav */
+        .header {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto; /* Two rows for logo and nav */
+			height:auto;
+            gap: 2px; /*Original was gap: 10px;*/
+        }
+
+        /* Main content grid */
+        .grid-container {
+            display: grid;
+            grid-template-columns: 30% 1fr ;
+            grid-template-rows: repeat(5, minmax(auto, auto)); /* Set max height for each row */
+            gap: 2px; /*Original was gap: 10px;*/
+        }
+
+        /* Basic styling for items */
+        .mclogo, .logo, .nav, .grid-item, .footer {
+            background-color: #E5EAF0; /* BACKGROUND Color INSIDE each grid box */
+			/* background-color: #ccc; */
+            padding: 2px;
+            text-align: center;
+            font-size: 1.2em;
+            border-radius: 8px;
+			/*border-color: #CB0306 ;
+			border:thin, solid outset; */
+			height: auto;
+        }
+		
+
+
+		.mclogo{max-height: 80px;
+		float: left;
+		max-width: auto;
+		padding: 1px;
+		margin:8px;}
+		
+		.div-right{
+		float: right;
+		vertical-align: bottom;
+		padding-right: 4px;
+		/* color: aliceblue; */
+		color: #061B57;
+}
+		.header-txt-color{
+	vertical-align: bottom;
+	/* color: aliceblue; */
+}
+		
+		
+		
+        .footer {
+            background-color: #aaa;
+        }
+
+        /* Optional responsive adjustment */
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr; /* Single column on smaller screens */
+            }
+        }
+    </style>
+
+
+
+
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Header area with logo and navigation -->
+        <div class="header">
+            <div class="logo">
+				
+				<div class="color_logoblu">
+    				<img class="mclogo" src="Images/McAlvany_Logo_Dk_Blue_BG.png" alt="McAlvany Logo">
+					<br>
+
+					<lable class="header-txt-color">
+						Trade Desk / Broker Internal Application
+					</lable>
+					<lable class="header-txt-color">
+						GRID TEST 2
+					</lable>
+					<div class="div-right" >
+						<label class="color_txt" style="vertical-align: bottom;" >Welcome: Morgan Silver</label>
+					</div>
+				</div>
+				
+		</div>
+			
+		<div class="nav">Navigation Bar 2</div>	
+			
+			
+	<div class="nav" ><!-- Navigation Bar -->
+		<div ><p>Trade Desk Application</p>
+			<div ><p id='display_time'>Today's Date: <script>document.write( new Date().toLocaleDateString());</script> </p>
+		</div>	
+	</div>
+</div> 
+</div>
+		
+
+
+        <!-- Main content grid with 2x4 layout -->
+        <div class="grid-container">
+			<div class="grid-item" >
+				<!-- Section 00 -->
+				<div style="display: flex; flex-wrap: wrap; justify-content: space-between; border: 4px solid #ffffff; padding: 1px; "  >
+		
+					
+				<div>
+					<label for="date-input">Enter Purchase Order Date: </label>
+					<input type="date" value="date"  placeholder="Enter Date" name="PODate" id="PODate">
+				</div>
+
+				<div>
+					<label for="date-input">Enter Transction Date: </label>
+					<input type="date" value="date"  placeholder="Enter Date" name="PODate" id="PODate">
+				</div>
+					
+
+			</div>
+				
+		</div>
+           
+            <div class="grid-item">
+				<!-- Section 0 -->
+				<div style="display: flex; flex-wrap: wrap; justify-content: space-between; border: 4px solid #ffffff; padding: 1px"; >
+				<div>
+				<lable for="confirm">Conformation No.</lable>
+				<input type="text" value=""  placeholder="Number Is Generated" name="confirm" id="confirm">
+				</div>
+
+					
+					<div>
+					<label for="date-input">Supplier: </label>
+					<input type="text" name="supplier" list="supplierList">
+
+					<datalist id="supplierList">
+					  <option value="ICA">  
+					  <option value="AMP">
+					  <option value="DG">  
+					  <option value="FT">
+					  <option value="?">  
+					 </datalist>
+				</div>
+			</div>
+			</div>
+			
+            <div class="grid-item">
+				Section 1
+		<div style="border: 4px solid #FFFFFF ; margin-top: 3px;">
+
+			<label for="clientInfo">Client Lists:</label>
+
+			<input type="text" name="client" id="client" list="clientInfo">
+			<datalist id="clientInfo" >
+			  <option value=" ">
+			  <option value="Al Dente">  
+			  <option value="Brandy Wine">
+			  <option value="Doug Hole">						 
+			  <option value="Dusty Rhoades">  
+			  <option value="Easton West">
+			  <option value="Faith Christian">
+			  <option value="Ginger Snapp">
+			  <option value="Heidi Clare">
+			  <option value="Howie Doohan">
+			  <option value="I. Pullem">
+			  <option value="Ivy Leage">
+			  <option value="Melody Music">
+			  <option value="Noah Lott">
+			  <option value="Ray Gunn">
+			  <option value="Rocky Mountain">
+			  <option value="Sue Flay">
+			  <option value="Tim Burr">
+			  <option value="Virginia Beach">  
+			 </datalist>
+
+			<p>
+<input type="text" name="client-adrs" id="client-adrs" maxlength="30" disabled="true" placeholder="Selected Client">
+</p>
+			
+			</div>
+		<!-- End Section 1 -->
+		</div>
+           
+            <div class="grid-item">
+				Section 2
+ 		<div style="float: right; ">
+			<p>
+			<label for="street-adrs">Shipping Address</label>
+			</p>
+			<textarea form="" name="street-adrs" id="street-adrs" rows="5" cols="50" style="resize:none;" maxlength="50" readonly="true"> 1212 Misty Mountain Lane, Greenville, CB 77556
+			</textarea>
+		</div>
+</div>	
+			
+            <div class="grid-item" style="text-align: right;">
+				Section 3
+				
+				<p>
+					Buy/Sale	<input type="text" placeholder="Buy/Sale">
+				</p>
+				<p>
+					Trade Code 	<input type="text" placeholder="Trade Code">
+				</p>
+				<p>
+					Trader 		<input type="text" placeholder="Trader">
+				</p>
+				<p>
+					L Source 1 	<input type="text" placeholder="L Source 1">
+				</p>
+				<p>
+					L Source 2 	<input type="text" placeholder="L Source 2">
+				</p>
+</div>
+            <div class="grid-item">
+				Section 4
+				<p>
+				<label for="street-adrs">Broker Information</label>
+				</p>
+				<textarea form="" name="street-adrs" id="street-adrs" rows="5" cols="50" style="resize: none; " maxlength="50" readonly="true" > Broker Information goes here.
+				</textarea>
+</div>
+			
+            <div class="grid-item">
+				Section 5
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas feugiat, arcu ornare ultrices sollicitudin, elit risus accumsan enim, at laoreet nisl erat nec quam. In vel massa dignissim, malesuada velit in, luctus ipsum. Sed facilisis, lectus varius maximus dapibus, dolor purus condimentum lorem, eu pharetra turpis neque vitae ante. Maecenas ac urna vitae turpis ultricies efficitur accumsan et mi. 
+				</p>
+</div>
+           
+            <div class="grid-item">
+				Section 6 <!-- problem with the GRID with the below code, is it pushes out the grid for these 
+							columns and messes up the overall form.  Would have to have a span of some sort for 
+							this row.	-->
+				<lable for="purch_order">
+	<h4><p align="left"> Purchase Order</p></h4> 
+</lable>
+	
+
+<table name="purch_order" id='p_order' align="center" border="0" style="border-collapse: collapse; width: auto;">
+  <tr>
+    <th>QTY</th>
+    <th>Item Code</th>
+    <th>Bought</th>
+    <th>Base</th>
+    <th>Unit</th>
+    <th>Extended</th>
+  </tr>
+  <tr>
+    <td><input Name="po_r1c1" id = "r1c1" type="text"></td>
+    <td><input Name="po_r1c2" id = "r1c2" type="text"></td>
+    <td><input Name="po_r1c3" id = "r1c3" type="text"></td>
+    <td><input Name="po_r1c4" id = "r1c4" type="text"></td>
+    <td><input Name="po_r1c5" id = "r1c5" type="text"></td>
+    <td><input Name="po_r1c6" id = "r1c6" type="text"></td>
+  </tr>
+
+</table>
+	
+	
+	
+	 
+	
+<p> </p>
+<p> </p>
+	
+	<!--     -->
+	
+<!-- END OF PURCHASE ORDER DIVISION --> 
+	
+<!-- ADD and REMOVE buttons. -->
+<input type="button" value="ADD New Row" onClick="addnewrow(p_order)"></input>
+<input type="button" value="REMOVE Last Row" onClick="removeRow(p_order)"></input>
+</div>	
+			
+<!--	
+			
+			<div class="grid-item">Section 2</div>
+            <div class="grid-item">Section 3</div>
+            <div class="grid-item">Section 4</div>
+            <div class="grid-item">Section 5</div>
+            <div class="grid-item">Section 6</div>
+-->
+            <div class="grid-item">Section 7
+			<div name="commish" style="float:left; flex; flex-wrap: wrap; justify-content: space-between; border: 4px solid #ffffff; padding: 1px" align="right" >
+	
+			<lable><h4><p align="center">Commission Distribution</p></h4></lable>
+	
+	<table  name="broker_pct" id='b_pct'>
+  <tr>
+    <th>Broker</th>
+    <th>Percentage</th>
+  </tr>
+  <tr>
+    <td><input Name="Bkr01" type="text" style="margin-right: 5px;"></td>
+    <td><input Name="Percent01" type="text"></td>
+  </tr>
+
+</table>
+
+	
+<p> </p>
+<p> </p>
+	
+<!-- ADD and REMOVE buttons. -->	
+<input type="button" value="ADD New Row" onClick="addnewrow(b_pct)"></input>
+<input type="button" value="REMOVE Last Row" onClick="removeRow(b_pct)"></input>
+			
+			
+	</div>		
+			
+			
+			
+			
+			
+			
+			
+			</div>
+            <div class="grid-item"><!-- THe Start of 8 -->
+				
+				Section 8
+				
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas feugiat, arcu ornare ultrices sollicitudin, elit risus accumsan enim, at laoreet nisl erat nec quam. In vel massa dignissim, malesuada velit in, luctus ipsum. Sed facilisis, lectus varius maximus dapibus, dolor purus condimentum lorem, eu pharetra turpis neque vitae ante. Maecenas ac urna vitae turpis ultricies efficitur accumsan et mi. Nullam tincidunt tellus id nunc dapibus, vitae semper nisl malesuada. Nullam maximus sagittis rhoncus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus et fermentum diam. Aenean maximus, ligula at viverra aliquet, massa neque lobortis dui, rutrum cursus elit massa non dolor. Pellentesque luctus nisl in nulla accumsan, vitae suscipit urna placerat.
+				</p>
+			
+			
+			
+					
+			
+			
+			
+			
+			<!-- THe End of 8 -->
+			</div>
+        </div>
+
+        <!-- Footer area -->
+        <div class="footer">
+            Footer Area
+			</br>
+					<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas feugiat, arcu ornare ultrices sollicitudin, elit risus accumsan enim, at laoreet nisl erat nec quam. In vel massa dignissim, malesuada velit in, luctus ipsum. Sed facilisis, lectus varius maximus dapibus, dolor purus condimentum lorem, eu pharetra turpis neque vitae ante. Maecenas ac urna vitae turpis ultricies efficitur accumsan et mi. 
+				</p>
+        </div>
+	
+	<!-- THe End BODY -->
+    </div>
+
+	
+	
+<script> 
+	
+/*Pseudo - Function	*/
+/*for thinking throuh a problem	*/
+/*For aan ADD button creating elements	*/
+/*like a text box	*/
+
+	/*
+	pseudofunction{
+	PROBLE STATEMENT: 
+	   the form may have as many as 5 or 6 text boxes across making a row.
+	   The first row is not really an issue as it will be hard coded.  
+	   But if a new row is created, how do I dynamically add ID's and names to them
+		so when the form is submitted in a get or post, each row and each text box
+		value is recorded and sent to the database.
+	
+	1.  Should I add an input to allow the user to input a value to add rows
+	  such as (add) 1 -5 rows?
+	2.  Or on each 'click' of an add button we add a row?
+	}
+
+	*/
+	
+/*
+https://www.geeksforgeeks.org/dynamically-create-and-remove-iframe-in-javascript/ 
+https://www.tutorialspoint.com/how-to-remove-existing-html-elements-in-javascript
+*/	
+	
+
+
+	
+function addnewrow(tableId){
+
+const tbl = tableId.id;
+ // Get the table by its ID
+const table = document.getElementById(tbl);
+// Create a new row
+const newRow = table.insertRow(-1);	
+// Now append the table.	
+document.getElementById(tbl).appendChild(newRow);	
+	
+    
+ // Create X amount of cells in the new row and add an input field in each cell.//
+//Get the rowcount so that value can be added to the id naming convention.//
+// EXAMPLE: R4C3  R=row then the row number, C=column and then the column number.//	
+
+	const rowCount = table.rows.length;
+	const rowref  = table.rows[0];
+	//alert(rowref.cells.length);
+
+	
+	for (let i = 0; i < rowref.cells.length; i++) {
+        const newCell = newRow.insertCell();
+        const input = document.createElement('input');
+		
+        input.type = 'text';
+        input.placeholder = `Input ${i + 1}`;
+		input.id = `R${rowCount}C${i + 1}`;
+        newCell.appendChild(input);
+		
+     }
+	const inputbtnadd = document.createElement('input'); //Add button
+	const inputbtndel = document.createElement('input'); // Delete button
+	const newCell3 = newRow.insertCell();
+	inputbtnadd.type = 'button';
+	inputbtnadd.id = `R${rowCount}`;
+	inputbtnadd.value = "+";
+	newCell3.appendChild(inputbtnadd);
+	
+	inputbtndel.type = 'button';
+	inputbtndel.value = "-";
+	inputbtndel.onclick = "(removeRow('b_pct'))";
+	newCell3.appendChild(inputbtndel);
+	
+}
+
+/*   */	
+	
+function removeRow(tableId) {
+
+// Get the table by its ID
+ const mytable = document.getElementById(tableId.id);
+
+ const rowCount = (mytable.rows.length); 
+	//alert(rowCount);
+ 
+	
+	// Test Code
+	// Get the table row (e.g., the first row)
+//var table_p = document.getElementById(tableId.id); // Replace with your table's ID
+//var row = table_p.rows[0]; // Access the first row (change the index as needed)
+
+// Get the count of cells (columns) in the row
+//var columnCount = row.cells.length;
+	//alert("I have this many columns:" + columnCount);
+	
+	// End Test Code
+	
+	
+
+	        // Ensure we don't remove the ORIGINAL first row or the header
+	        // by checking the row count.  If more then 2 rows, one row can be deleted.
+            if (rowCount > 2) {
+                mytable.deleteRow(rowCount - 1);
+            } else {
+                alert("Can't Remove the Last Row!");
+            }
+        }
+	
+
+
+/*   */	
+
+</script>
+</body>
+</html>

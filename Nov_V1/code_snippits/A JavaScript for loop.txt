@@ -1,0 +1,28 @@
+A JavaScript for loop is a type of loop that allows you to execute a block of code repeatedly for a specified number of iterations. The basic syntax is as follows:
+
+for (initializer; condition; iterator) {
+  // loop body: statement(s)
+}
+
+Here’s a breakdown of each part:
+
+Initializer: Sets the initial value of a variable (usually a counter) used in the loop.
+Condition: Specifies the condition that determines whether the loop should continue or terminate. The condition is evaluated at the beginning of each iteration.
+Iterator: Updates the variable (usually the counter) used in the loop after each iteration.
+Example 1: Simple Counting Loop
+
+for (let i = 0; i < 5; i++) {
+  console.log(i);
+}
+// Output: 0, 1, 2, 3, 4
+
+
+
+
+Outer Function 
+
+//What does the outer function do?
+
+	Inner Function
+	
+	//What does the Inner Function do?

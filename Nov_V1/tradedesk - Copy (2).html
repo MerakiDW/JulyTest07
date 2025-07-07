@@ -1,0 +1,358 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Trade Desk</title>
+<title>McAlvany Sales</title>
+<link href="css/McAlvany_Style.css" rel="stylesheet" type="text/css">
+	
+<link href="css/Style_Tabs.css" rel="stylesheet" type="text/css">
+
+	<!--
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+-->
+<div class="logo_bg_blue">
+    <img class="logo" src="Images/McAlvany_Logo_Dk_Blue_BG.png" alt="logo">
+
+<br>
+
+<lable class="header-txt-color">
+	Trade Desk / Broker Internal Application
+</lable>
+
+<!-- Get this info from the login credentials -->	
+<div class="div-right">
+	<label >Welcome: Morgan Silver</label>
+</div>
+</div>
+
+<!-- This is the Start of the TOP NAV BAR  -->
+<!-- 
+May not use this depending on how the form or 
+application functionality is constucted.
+-->
+	
+<div class="topnav">
+
+<!--	</br></br></br>
+Consider using an Include file here so that the 
+nav bar will only show up in a sucessful login.
+-->
+  <a href="index.html">Home</a>
+  <a class="active" href="tradedesk.html">Trade Desk</a>
+  <a href="broker.html">Broker</a>
+  <a href="#maint" >Maintenance</a>
+	
+<div class="div-right">
+	<a href="Index.html">Logout</a>
+</div>
+
+</div>
+	
+</head>
+
+<body>
+
+<!-- this is the START of the Master_Wrap div tag.  -->
+<div name="master_wrap">
+	
+<div style="text-align: center; "><h5>Trade Desk Application</h5>
+	<div>
+	<h4 id='display_time'>Today's Date: <script>document.write( new Date().toLocaleDateString());</script> </h4>
+	</div>	
+</div>	
+	
+<div name="col01" style="width: 48%; height: 40px; flex-wrap: wrap; justify-content: space-between; float:left; border: solid; padding-left: 5px;">
+
+<div>
+<label for="date-input">Enter Purchase Order Date: </label>
+
+<input type="date" value="date"  placeholder="Enter Date" name="date_of_record" id="date_of_record">
+</div>
+</div>
+	
+<div name="col02" style="width: 48%; height: 40px; flex-wrap: wrap; justify-content: space-between; float:left; border: solid; padding-left: 5px;">
+
+<div >
+<label for="date-input">Enter Transction Date: </label>
+
+<input type="date" value="date"  placeholder="Enter Date" name="poDate" id="poDate">
+</div>
+</div>
+	
+<div style="clear: both;"></div>
+
+<!-- col03 and col04 for testing layout -->
+<div name="col03" style="width: 48%; height: 200px; flex-wrap: wrap; justify-content: space-between; float:left; border: solid; padding-left: 5px;">
+
+<!-- SPACER -->	
+<p></p>
+	
+<label for="date-input">Supplier: </label>
+
+<input type="text" name="supplier" list="supplierList">
+  <datalist id="supplierList">
+	  <option value=""></option>
+  <option value="AMP">AMP</option>
+  <option value="DG">DG</option>  
+  <option value="FT">FT</option>
+  <option value="Another Option">Another Option</option>  
+ </datalist>
+</div>	
+	
+	
+<!-- col03 and col04 for testing layout -->	
+<div  name="col04" style="width: 48%; height: 200px; flex-wrap: wrap; justify-content: space-between; float:left; border:solid; padding-left: 5px;">
+	
+
+<p> 
+<label for="street-adrs">SHIPPING TO:</label>
+</p>
+	
+<textarea form="" name="street-adrs" id="street-adrs" style="resize: both; grid-auto-rows: 50px;" rows="6" cols="50" maxlength="50" readonly="true" >
+1212 Misty Mountain Lane, Greenville, CB 77556
+</textarea>
+	
+</div>
+
+ 
+	
+<!-- END END col03 and col04 for testing layout END END -->
+
+
+<!-- CLEAR ABOVE STYLES so the form will flow below 
+	 this point correctly -->
+
+<div style="clear:both;"></div>
+
+<hr style="width: 97%; float: left;">
+
+<div name="commish" style="float:left; flex; flex-wrap: wrap; justify-content: space-between; border: 4px solid #ffffff; padding: 1px" align="right" >
+	
+
+	<lable><h4><p align="center">Commission Distribution</p></h4></lable>
+	
+	<table>
+  <tr>
+    <th>Broker</th>
+    <th>Percentage</th>
+  </tr>
+  <tr>
+    <td><input Name="Bkr01" type="text" style="margin-right: 5px;"></td>
+    <td><input Name="Percent01" type="text"></td>
+  </tr>
+  <tr>
+    <td><input Name="Bkr02" type="text" style="margin-right: 5px;"></td>
+    <td><input Name="Percent02" type="text"></td>
+  </tr>
+  <tr>
+    <td><input Name="Bkr03" type="text" style="margin-right: 5px;"></td>
+    <td><input Name="Percent03" type="text"></td>
+  </tr>
+  <tr>
+    <td><input Name="Bkr04" type="text" style="margin-right: 5px;"></td>
+    <td><input Name="Percent04" type="text"></td>
+  </tr>
+</table>
+	
+<p>
+	<lable>ICA:</lable><input type="number" name="ica_percent" min="0" max="100">
+</p>
+	
+<p>
+	<lable>Subtotal:</lable><input type="number" name="subtotal">
+</p>
+	
+<p>
+	<lable>Suppliers Postage:</lable><input type="number" name="supp_postage">
+</p>
+		
+<p>
+	<lable>Profit:</lable><input type="number" name="profit">
+</p>
+	
+<p>
+	<lable>X Post:</lable><input type="number" name="x_post">
+</p>
+		
+<p>
+	<lable>Total:</lable><input type="number" name="total">
+</p>
+	
+<!-- END OF COMMISSION DIVISION --> 
+</div>	
+
+
+<!-- Client Info DIVISION --> 
+<div name="client_info" style="float:left; flex; flex-wrap: wrap; justify-content: space-between; border: 4px solid #ffffff; padding: 1px" align="right" >
+	
+<p style="padding-bottom: 55px"></p>
+
+<p>
+	<lable>Client:</lable>
+		<input type="text" name="client">
+</p>
+		
+<p>
+	<lable>Trade Code:</lable>
+		<input type="text" name="trade_code">
+</p>
+	
+<p>
+	<lable>A/R Days:</lable>
+		<input type="text" name="a_r_days">
+</p>
+	
+	<!-- END OF COMMISSION DIVISION --> 
+</div>
+
+
+<!-- CLEAR ABOVE STYLES so the form will flow below 
+	 this point correctly -->
+
+<div style="clear:both;"></div>
+
+<!-- Purschase Order Info DIVISION --> 
+<div name="purch_order" style="float:left; flex; flex-wrap: wrap; justify-content: space-between; border: 4px solid #ffffff; padding: 1px" align="right" >
+
+	
+<!-- CLEAR ABOVE STYLES so the form will flow below 
+	 this point correctly -->
+
+<div style="clear:both;"></div>
+
+<hr style="width: 100%; float: left;">
+	
+	
+<lable for="purch_order">
+	<h4><p align="left"> Purchase Order</p></h4> 
+</lable>
+	
+
+<table name="purch_order" align="center" width="90%" border="0" style="border-collapse: collapse;">
+  <tr>
+    <th>QTY</th>
+    <th>Item Code</th>
+    <th>Bought</th>
+    <th>Base</th>
+    <th>Unit</th>
+    <th>Extended</th>
+  </tr>
+  <tr>
+    <td><input Name="r1c1" type="text"></td>
+    <td><input Name="r1c2" type="text"></td>
+    <td><input Name="r1c3" type="text"></td>
+    <td><input Name="r1c4" type="text"></td>
+    <td><input Name="r1c5" type="text"></td>
+    <td><input Name="r1c6" type="text"></td>
+  </tr>
+		
+	
+  <tr>
+    <td><input Name="r2c1" type="text"></td>
+    <td><input Name="r2c2" type="text"></td>
+    <td><input Name="r2c3" type="text"></td>
+    <td><input Name="r2c4" type="text"></td>
+    <td><input Name="r2c5" type="text"></td>
+    <td><input Name="r2c6" type="text"></td>
+  </tr>
+		
+
+  <tr>
+    <td><input Name="r3c1" type="text"></td>
+    <td><input Name="r3c2" type="text"></td>
+    <td><input Name="r3c3" type="text"></td>
+    <td><input Name="r3c4" type="text"></td>
+    <td><input Name="r3c5" type="text"></td>
+    <td><input Name="r3c6" type="text"></td>
+		
+</tr>
+		
+	
+		
+  <tr>
+    <td><input Name="r4c1" type="text"></td>
+    <td><input Name="r4c2" type="text"></td>
+    <td><input Name="r4c3" type="text"></td>
+    <td><input Name="r4c4" type="text"></td>
+    <td><input Name="r4c5" type="text"></td>
+    <td><input Name="r4c6" type="text"></td>
+  </tr>
+		
+		
+		
+ <tr>
+    <td colspan="4" ></td>
+    <td>Postage:</td>
+	<td><input Name="r5c6" type="text"></td>
+  </tr>
+ <tr>
+    <td colspan="4" ></td>
+    <td>Total:</td>
+	<td><input Name="r6c6" type="text"></td>
+  </tr>
+</table>
+	
+	
+	
+	
+	
+<p> </p>
+<p> </p>
+	
+	<!--
+	<p>
+		
+	<input Name="r3c1" type="text">
+	<input Name="r3c2" type="text">
+	<input Name="r3c3" type="text">
+	<input Name="r3c4" type="text">
+	<input Name="r3c5" type="text">
+	<input Name="r3c6" type="text">
+	
+	</p>
+	<p>
+		
+	<input Name="r4c1" type="text">
+	<input Name="r4c2" type="text">
+	<input Name="r4c3" type="text">
+	<input Name="r4c4" type="text">
+	<input Name="r4c5" type="text">
+	<input Name="r4c6" type="text">
+	
+	</p>
+-->
+	
+<!-- END OF PURCHASE ORDER DIVISION --> 
+</div>
+
+
+
+<div name="col_comments" style="float:left; border: solid; padding-left: 5px; width:80%">
+
+<p> 
+	<label for="comments">COMMENTS ON THIS ORDER:</label>
+</p>
+
+<div style="vertical-align: top;">	
+<textarea form="" name="comments" id="comments" style="resize: both; grid-auto-rows: 50px;" rows="6" cols="50" maxlength="50" readonly="true" >
+Please add any additional comments regarding this order here:
+</textarea>
+
+
+	<label for="ship_date">Enter Scheduled Ship Date: </label>
+
+	<input type="date" value="date"  placeholder="Enter Date" name="ship_on_date" id="ship_on_date">
+</div>
+
+</div>
+
+</div><!-- this is the end of the Master_Wrap div tag.  -->
+	
+</body>
+
+<script>
+/*	*/
+</script>
+
+</html>

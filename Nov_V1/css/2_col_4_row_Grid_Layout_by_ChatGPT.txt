@@ -1,0 +1,105 @@
+
+
+
+
+Explanation
+The .grid-container class is set up with CSS Grid to create a structure with two columns and four rows.
+grid-template-columns: 1fr 1fr; defines two equal-width columns.
+grid-template-rows: repeat(4, 1fr); specifies four rows of equal height.
+.grid-item provides styling for each section. You can customize background colors, padding, and fonts as desired.
+This will render eight equally sized sect<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout with Header and Footer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        /* Main wrapper grid with header, content, and footer */
+        .wrapper {
+            display: grid;
+            grid-template-rows: auto 1fr auto; /* Header, content, and footer rows */
+            width: 80%;
+            max-width: 1200px;
+            height: 90vh;
+            gap: 10px;
+            background-color: #ffffff;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header grid with logo and nav */
+        .header {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto; /* Two rows for logo and nav */
+            gap: 10px;
+        }
+
+        /* Main content grid */
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        /* Basic styling for items */
+        .logo, .nav, .grid-item, .footer {
+            background-color: #ccc;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.2em;
+            border-radius: 8px;
+        }
+
+        .footer {
+            background-color: #aaa;
+        }
+
+        /* Optional responsive adjustment */
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr; /* Single column on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Header area with logo and navigation -->
+        <div class="header">
+            <div class="logo">Logo Area</div>
+            <div class="nav">Navigation Bar</div>
+        </div>
+
+        <!-- Main content grid with 2x4 layout -->
+        <div class="grid-container">
+            <div class="grid-item">Section 1</div>
+            <div class="grid-item">Section 2</div>
+            <div class="grid-item">Section 3</div>
+            <div class="grid-item">Section 4</div>
+            <div class="grid-item">Section 5</div>
+            <div class="grid-item">Section 6</div>
+            <div class="grid-item">Section 7</div>
+            <div class="grid-item">Section 8</div>
+        </div>
+
+        <!-- Footer area -->
+        <div class="footer">
+            Footer Area
+        </div>
+    </div>
+</body>
+</html>
+ions in a 2x4 grid layout.

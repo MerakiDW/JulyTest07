@@ -1,0 +1,227 @@
+@charset "utf-8";
+
+/* This section is the header section styles  */
+
+
+
+/* Hiding TABs Feature */
+/* Style the tab */
+/*
+.wrapper {
+  width: 100%;
+  height: 500px;
+  margin: auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, .1);
+}
+.buttonWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+button {
+  letter-spacing: 3px;
+  border: none;
+  padding: 10px;
+  background-color: #bccbe9;
+  color: #232c3d;
+  border: thin solid #000537;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+button:hover {
+  background-color: #28437A;
+	color: aliceblue;
+	 
+}
+
+button.active {
+  background-color:#B8B8B8;
+	
+	
+}
+.active {
+  background-color: white;
+}
+
+/*
+button.active {
+  background-color: white;
+}
+.active {
+  background-color: white;
+}
+*/
+
+/*
+p {
+  text-align: left;
+  padding: 10px;
+}
+.content {
+  display: none;
+  padding: 10px 20px;
+}
+.content.active {
+display:block;
+}
+
+*/
+
+/* START styles for hiding TABs feature from W3 */
+
+a {
+	background-color:transparent;
+}
+
+a:active,a:hover {
+	outline-width:0;
+}
+
+.w3-btn:hover {
+	box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.w3-btn,.w3-button {
+	-webkit-touch-callout:none;
+	-webkit-user-select:none;
+	-khtml-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+}
+
+.w3-disabled,.w3-btn:disabled,.w3-button:disabled {
+	cursor:not-allowed;
+	opacity:0.3;
+}
+
+.w3-disabled *,:disabled * {
+	pointer-events:none;
+}
+
+.w3-btn .w3-disabled:hover,.w3-btn:disabled:hover {
+	box-shadow:none;
+}
+
+.w3-button:hover { 
+	color:#000!important;
+	background-color:#ccc!important;
+}
+
+.w3-transparent,.w3-hover-none:hover {
+	background-color:transparent!important;
+}
+.w3-hover-none:hover {
+	box-shadow:none!important;
+}
+
+
+
+.w3-black,.w3-hover-black:hover {
+	color:#fff!important;
+	background-color:#000!important;
+}
+
+.w3-red,.w3-hover-red:hover {
+	color:#fff!important;
+	background-color:#005B97!important;
+}
+
+.w3-bar {
+	width:100%;
+	overflow:hidden;
+}
+.w3-center .w3-bar {
+	display:inline-block;
+	width:auto;
+}
+
+.w3-bar .w3-bar-item {
+	padding:8px 16px;
+    float:left;
+	width:auto;
+	border:none;
+	display:block;
+	outline:0;
+}
+.w3-bar .w3-dropdown-hover,.w3-bar .w3-dropdown-click
+{
+	position:static;
+	float:left
+}
+
+.w3-bar .w3-button { 
+	white-space:normal;
+}
+
+.w3-bar-block .w3-bar-item {
+	width:100%;
+	display:block;
+	padding:8px 16px;
+	text-align:left;
+	border:none;white-space:normal;
+	float:none;
+	outline:0;
+}
+
+.w3-bar-block.w3-center .w3-bar-item {
+	text-align:center;
+}
+
+.w3-block{ 
+	display:block;
+	width:100%;
+}
+
+.w3-container,.w3-panel {
+	padding:0.01em 16px
+}
+
+.w3-panel { 
+	margin-top:16px;m
+	argin-bottom:16px;
+}
+
+.w3-container:after,.w3-container:before,.w3-panel:after,.w3-panel:before,.w3-row:after,.w3-row:before,.w3-row-padding:after,.w3-row-padding:before,
+.w3-cell-row:before,.w3-cell-row:after,.w3-clear:after,.w3-clear:before,.w3-bar:before,.w3-bar:after {
+	content:"";
+	display:table;
+	clear:both;
+}
+
+.w3-border {
+	border:1px solid #1C3B6B!important;
+    border-radius: 2px;
+
+}
+
+
+
+
+/*  I dont think I need these styles...*/
+/*
+.w3-border-top {
+	border-top:1px solid #ccc!important;
+}
+
+.w3-border-bottom {
+	border-bottom:1px solid #ccc!important;
+}
+
+.w3-border-left {
+	border-left:1px solid #ccc!important;
+}
+
+.w3-border-right { 
+	border-right:1px solid #ccc!important;
+}
+*/
+/*
+.w3-border-0 {
+	border:0!important;
+}
+*/
+
+/* END styles for hiding TABs feature. */

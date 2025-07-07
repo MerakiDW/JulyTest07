@@ -1,0 +1,231 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TEST PAGE</title>
+<title>McAlvany Sales</title>
+<link href="css/McAlvany_Style.css" rel="stylesheet" type="text/css">
+	
+<link href="css/Style_Tabs.css" rel="stylesheet" type="text/css">
+
+	<!--
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+-->
+<div class="logo_bg_blue">
+    <img class="logo" src="Images/McAlvany_Logo_Dk_Blue_BG.png" alt="logo">
+</br>
+<lable class="header-txt-color">Trade Desk / Broker Internal Application</label>
+
+<!-- Get this info from the login credentials -->	
+<div class="div-right">
+	<label >Welcome: Morgan Silver</label>
+</div>
+</div>
+
+<!-- This is the Start of the TOP NAV BAR  -->
+<!-- 
+May not use this depending on how the form or 
+application functionality is constucted.
+-->
+	
+<div class="topnav">
+
+<!--	</br></br></br>
+Consider using an Include file here so that the 
+nav bar will only show up in a sucessful login.
+-->
+  <a href="index.html">Home</a>
+  <a href="tradedesk.html">Trade Desk</a>
+  <a class="active" href="broker.html">Broker</a>
+  <a href="#maint" >Maintenance</a>
+	
+<div class="div-right">
+	<a href="Index.html">Logout</a>
+</div>
+
+</div>
+
+</head>
+
+
+
+<body>
+	
+<div style="text-align: center; ">
+	<h5>Broker Application</h5>
+	<div>
+	<h4 id='display_time'>Today's Date: <script>document.write( new Date().toLocaleDateString());</script> </h4>
+	</div>		
+</div>
+	  
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; border: 4px solid #ffffff; padding: 1px"; >
+
+<!--
+<div>
+<label for="date-input">Enter Purchase Order Date: </label>
+
+<input type="date" value="date"  placeholder="Enter Date" name="PODate" id="PODate">
+</div>
+
+<div>
+<label for="date-input">Enter Transction Date: </label>
+
+<input type="date" value="date"  placeholder="Enter Date" name="PODate" id="PODate">
+</div>
+
+<div>
+
+<lable style="margin:2px;" >Choose Division</lable>
+<input type="checkbox" name="division" value="R">Rare Coin
+<input type="checkbox" name="division" value="B"> Bullion Cube
+
+</div>
+-->	
+
+<div style="clear: both"></div>
+
+<!-- 	
+<div id="mydiv" style="float:left ; margin-right: 5px; border:#F10004 thin solid">
+-->
+	
+<div id="POdivWrapper" style="float:left; width:100% ; border:#F10004 thin solid; display: flex; flex-wrap: wrap; justify-content: space-between;">
+<!--
+<div id='divPrimary'> 
+	<input type="text" id="prime01"  placeholder="I am textbox prime01"></input>
+	<input type="text" id="prime02"  placeholder="I am textbox prime02"></input>
+	<input type="text" id="prime03"  placeholder="I am textbox prime03"></input>
+	<input type="text" id="prime04"  placeholder="I am textbox prime04"></input>
+</div>
+-->
+
+<table id='tbl1' style='border: solid thin #090EEA; width: inherit; margin:3px;'>
+  <tr>
+    <th>Header 1</th>
+    <th>Header 2</th>
+    <th>Header 3</th>
+    <th>Header 4</th>
+  </tr>
+  <tr>
+    <td><input type="text" id="prime01"  placeholder="I am textbox prime01" ></input></td>
+    <td><input type="text" id="prime02"  placeholder="I am textbox prime02" ></input></td>
+	<td><input type="text" id="prime03"  placeholder="I am textbox prime03" ></input></td>
+    <td><input type="text" id="prime04"  placeholder="I am textbox prime04" ></input></td>
+  </tr>
+ </table>
+
+</div>
+
+<!--  //Just a backup of the div tag above, just in case.
+<div id="POdivWrapper" style="float:left; width:100% ; border:#F10004 thin solid">
+	<div id='divrow2'>
+	<input type="text" id="tb01"   placeholder="Yep i am "></input>
+		</br>
+	<input type="text" placeholder="Yep i am 2 box "></input>
+</div>
+
+</div>
+
+
+
+
+
+
+-->
+<p></p>	
+
+ <div style="margin-right: 5px">
+<!-- END OF TAB 3 DIVISION --> 
+	 <input type="button" value="ADD" onClick="addrow(1)"></input>
+	 <input type="button" value="REMOVE" onClick="deleterow()"></input>
+</div>	
+<!--
+ <button onclick="testnewRow()">Add Test Row</button>
+-->
+<input type="button" value="ADD TEST New Row" onClick="addnewrow()"></input>
+ <button onclick="removeRow()">Remove Last Row</button>
+
+<p></p>
+ <button onclick="gettblrowcount()">Row Count</button>
+
+<script> 
+	
+/*Pseudo - Function	*/
+/*for thinking throuh a problem	*/
+/*For aan ADD button creating elements	*/
+/*like a text box	*/
+
+	/*
+	pseudofunction{
+	PROBLE STATEMENT: 
+	   the form may have as many as 5 or 6 text boxes across making a row.
+	   The first row is not really an issue as it will be hard coded.  
+	   But if a new row is created, how do I dynamically add ID's and names to them
+		so when the form is submitted in a get or post, each row and each text box
+		value is recorded and sent to the database.
+	
+	1.  Should I add an input to allow the user to input a value to add rows
+	  such as (add) 1 -5 rows?
+	2.  Or on each 'click' of an add button we add a row?
+	}
+
+	*/
+	
+/*
+https://www.geeksforgeeks.org/dynamically-create-and-remove-iframe-in-javascript/ 
+https://www.tutorialspoint.com/how-to-remove-existing-html-elements-in-javascript
+*/	
+	
+
+
+	
+function addnewrow(){
+ // Get the table by its ID
+const table = document.getElementById('tbl1');
+// Create a new row
+const newRow = table.insertRow(-1);	
+	
+document.getElementById("tbl1").appendChild(newRow);	
+	
+
+    
+ // Create X amount of cells in the new row and add an input field in each cell.//
+//Get the rowcount so that value can be added to the id naming convention.//
+// EXAMPLE: R4C3  R=row then the row number, C=column and then the column number.//	
+
+	const rowCount = table.rows.length;
+	
+	for (let i = 0; i < 4; i++) {
+        const newCell = newRow.insertCell();
+        const input = document.createElement('input');
+		
+        input.type = 'text';
+        input.placeholder = `Input ${i + 1}`;
+		input.id = `R${rowCount}C${i + 1}`;
+        newCell.appendChild(input);
+     }
+	
+}
+
+/*   */	
+	
+function removeRow() {
+ // Get the table by its ID
+ const table = document.getElementById('tbl1');
+ const rowCount = table.rows.length;
+
+            // Ensure we don't remove the header row
+            if (rowCount > 1) {
+                table.deleteRow(rowCount - 1);
+            } else {
+                alert("No rows to remove!");
+            }
+        }
+	
+
+
+/*   */	
+
+</script>
+
+</body>
+</html>

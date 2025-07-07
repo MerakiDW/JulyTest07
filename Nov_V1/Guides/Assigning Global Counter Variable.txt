@@ -1,0 +1,72 @@
+Assigning Global Counter Variable
+To assign a global variable in JavaScript that can be used as a counter each time a new element is added, you can declare the variable outside of any function or block scope. Here’s an example:
+
+var counter = 0; // declare the global variable
+
+// assume you have a function that adds new elements
+function addElement() {
+  // increment the counter
+  counter++;
+  // add the new element
+  // ...
+}
+
+// use the counter elsewhere in your code
+console.log(counter); // outputs the current counter value
+
+In this example, counter is a global variable declared outside of any function or block scope. It can be accessed and modified from anywhere in your code.
+
+If you want to ensure that the counter is incremented only when a new element is added, you can modify the addElement function to return the updated counter value:
+
+var counter = 0;
+
+function addElement() {
+  counter++;
+  // add the new element
+  // ...
+  return counter;
+}
+
+// use the updated counter value elsewhere in your code
+var updatedCounter = addElement();
+console.log(updatedCounter); // outputs the updated counter value
+
+Alternatively, you can use an immediately invoked function expression (IIFE) to encapsulate the counter variable and its increment logic:
+
+var counter = (function() {
+  var c = 0;
+  return {
+    increment: function() {
+      c++;
+    },
+    getValue: function() {
+      return c;
+    }
+  };
+})();
+
+// use the counter elsewhere in your code
+counter.increment(); // increment the counter
+console.log(counter.getValue()); // outputs the updated counter value
+
+In this example, the IIFE creates a self-contained scope for the counter variable and its increment logic. The increment and getValue functions provide a way to interact with the counter without exposing it directly to the global scope.
+
+Remember to declare the global variable with var, let, or const to ensure it is properly scoped and initialized.
+
+
+<script>
+var yourGlobalVariable;
+function foo() {
+    // ...
+}
+</script>
+
+Alternatively:
+
+In modern environments, you can assign to a property on the object that globalThis refers to (globalThis was added in ES2020):
+
+<script>
+function foo() {
+    globalThis.yourGlobalVariable = ...;
+}
+</script>

@@ -1,0 +1,100 @@
+
+
+/*	this code was the eariler attempt the above is far better so I think I can remove this.*/
+function addrow(rownum){
+//Kind of works- October 9, 2024
+	
+// Somehow we need to limit the number of rows to be built
+// is only 5 rows.
+
+var maxrows = 5;  // Maximum number of rows that can be added.
+var ncount = 0;  //  Loop counter.
+var ncol = 5; //Number of Columns for the row
+	
+//var nLoop = rownum + 1;	
+
+const newRownumber = ncount;
+const nDivName = 'nDivRow' + ncount;
+const nColumn = '' ;
+const nRow = '' ;
+const newTxtBox = 'input' + ncount;
+
+const trtag = '<tr>'
+const trEndtag = '</tr>'
+const tdtag = '<td>'
+const tdEndtag = '</td>'
+
+var newtextbox1 = document.createElement('input');
+var newtextbox2 = document.createElement('input');
+let newBtn1 = document.createElement('button');
+//newBtn1.onclick(rownum(1));	
+	
+
+	
+	
+
+// Need a means to find out how many rows already on the form.
+// Then use that number to create a hidden text box or something,
+// that can be used in the IF statement.
+// A coding for the elements might look like this (r1c1, r1c2, r1c3...)
+// where r = row number and c = column.
+// I think the simpleist way is to only make 1 ADD button, 
+// and once you have more then 1 row, then a delete row button.
+
+//new row
+newtextbox1.type = 'text';
+newtextbox1.name = 'myTextBox1';
+newtextbox1.id = 'myTextBox1Id';
+newtextbox1.placeholder = 'Enter your text here' + rownum;
+newtextbox1.autocomplete = 'off';
+newtextbox1.maxLength = 50; 
+	
+//	
+
+
+newtextbox1.type = 'text';
+newtextbox1.name = 'myTextBox1';
+newtextbox1.id = 'myTextBox1Id';
+newtextbox1.placeholder = 'Enter your text here' + rownum;
+newtextbox1.autocomplete = 'off';
+newtextbox1.maxLength = 50; 
+
+newtextbox2.type = 'text';
+newtextbox2.name = 'myTextBox2';
+newtextbox2.id = 'myTextBox2Id';
+newtextbox2.placeholder = 'Enter your text here';
+newtextbox2.autocomplete = 'off';
+newtextbox2.maxLength = 50;
+	
+//newBtn1.type='button';
+//newBtn1.name='add1';
+//newBtn1.id='add01';
+//newBtn1.textContent = "ADD01";
+//newBtn1.value="ADD";
+//newBtn1.text="ADD";
+//newBtn1.addEventListener('click', addrow(1))
+//newBtn1.onClick(addrow(1));
+
+var loopcount = 1;
+var add1 = 1;
+ 
+if (loopcount = 1) {
+// replace with your form's ID
+document.getElementById("POdivWrapper").appendChild(newtextbox1);
+document.getElementById("POdivWrapper").appendChild(newtextbox2);
+//document.getElementById("mydiv").appendChild(newBtn1).addEventListener('click', addrow(1));
+	loopcount + add1;
+	
+}	else {
+	//exit the loop
+	//break;
+}
+
+//document.write(loopcount);
+	
+//var formElement = document.getElementById('mydiv');	
+//formElement.appendChild(newtextbox);
+//document.body.appendChild(newtextbox);	
+	
+}
+	

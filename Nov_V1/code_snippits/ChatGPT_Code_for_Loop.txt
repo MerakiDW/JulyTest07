@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Row Creation with Input Fields</title>
+</head>
+<body>
+    <table id="myTable" border="1">
+        <tr>
+            <th>Column 1</th>
+            <th>Column 2</th>
+            <th>Column 3</th>
+            <th>Column 4</th>
+            <th>Column 5</th>
+        </tr>
+    </table>
+    <br>
+    <button onclick="addRow()">Add Row</button>
+    <button onclick="removeRow()">Remove Last Row</button>
+
+    <script>
+        function addRow() {
+            // Get the table by its ID
+            const table = document.getElementById('myTable');
+            // Create a new row
+            const newRow = table.insertRow();
+            
+            // Create 5 cells in the new row and add an input field in each cell
+            for (let i = 0; i < 5; i++) {
+                const newCell = newRow.insertCell();
+                const input = document.createElement('input');
+                input.type = 'text';
+                input.placeholder = `Input ${i + 1}`;
+                newCell.appendChild(input);
+            }
+        }
+
+        function removeRow() {
+            // Get the table by its ID
+            const table = document.getElementById('myTable');
+            const rowCount = table.rows.length;
+
+            // Ensure we don't remove the header row
+            if (rowCount > 1) {
+                table.deleteRow(rowCount - 1);
+            } else {
+                alert("No rows to remove!");
+            }
+        }
+    </script>
+</body>
+</html>
+
+How It Works:
+There are now two buttons:
+"Add Row": This calls the addRow() function to add a new row with 5 columns, each containing an input field.
+"Remove Last Row": This calls the removeRow() function, which deletes the last row in the table.
+The removeRow() function:
+Checks the number of rows using rows.length.
+Ensures that it does not delete the header row by only allowing deletion when there are more than 1 row.
+Uses deleteRow() to remove the last row in the table.
+With this setup, you can add as many rows as you like with the "Add Row" button, and then remove the most recently added rows using the "Remove Last Row" button.
+
+
+
+
+
+

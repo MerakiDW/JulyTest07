@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Broker</title>
+<title>McAlvany Sales</title>
+<link href="css/McAlvany_Style.css" rel="stylesheet" type="text/css">
+	
+<link href="css/Style_Tabs.css" rel="stylesheet" type="text/css">
+
+	<!--
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+-->
+<div class="logo_bg_blue">
+    <img class="logo" src="Images/McAlvany_Logo_Dk_Blue_BG.png" alt="logo">
+</br>
+<lable class="header-txt-color">Trade Desk / Broker Internal Application</label>
+
+<!-- Get this info from the login credentials -->	
+<div class="div-right">
+	<label >Welcome: Morgan Silver</label>
+</div>
+</div>
+
+<!-- This is the Start of the TOP NAV BAR  -->
+<!-- 
+May not use this depending on how the form or 
+application functionality is constucted.
+-->
+	
+<div class="topnav">
+
+<!--	</br></br></br>
+Consider using an Include file here so that the 
+nav bar will only show up in a sucessful login.
+-->
+  <a href="index.html">Home</a>
+  <a href="tradedesk.html">Trade Desk</a>
+  <a class="active" href="broker.html">Broker</a>
+  <a href="#maint" >Maintenance</a>
+	
+<div class="div-right">
+	<a href="Index.html">Logout</a>
+</div>
+
+</div>
+	
+	
+	
+	
+</head>
+
+<body>
+	
+<div style="text-align: center; ">
+	<h5>Broker Application</h5>
+	
+	<div>
+	<h4 id='display_time'>Today's Date: <script>document.write( new Date().toLocaleDateString());</script> </h4>
+	</div>	
+</div>		
+
+
+	  
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; border: 4px solid #ffffff; padding: 1px"; >
+
+
+<div>
+<label for="date-input">Enter Purchase Order Date: </label>
+
+<input type="date" value="date"  placeholder="Enter Date" name="PODate" id="PODate">
+</div>
+
+<div>
+<label for="date-input">Enter Transction Date: </label>
+
+<input type="date" value="date"  placeholder="Enter Date" name="PODate" id="PODate">
+</div>
+
+<div>
+
+<lable style="margin:2px;" >Choose Division</lable>
+<input type="checkbox" name="division" value="R">Rare Coin
+<input type="checkbox" name="division" value="B"> Bullion Cube
+
+</div>
+	
+	
+<div>
+<label for="date-input">Supplier: </label>
+
+<input type="text" name="supplier" list="supplierList">
+<datalist id="supplierList">
+  <option value="ICA">  
+  <option value="AMP">
+  <option value="DG">  
+  <option value="FT">
+  <option value="?">  
+ </datalist>
+</div>
+
+</div>	
+<!-- This area in TAB 1 is the Beginning of the FORM and please remeber to add the <form> tag.  -->
+	  
+
+
+	  
+<div style="border: 4px solid #FFFFFF ; margin-top: 3px;">
+
+<label for="clientInfo">Client Lists:</label>
+
+<input type="text" name="client" id="client" list="clientInfo">
+<datalist id="clientInfo" >
+  <option value=" ">
+  <option value="Al Dente">  
+  <option value="Brandy Wine">
+  <option value="Doug Hole">						 
+  <option value="Dusty Rhoades">  
+  <option value="Easton West">
+  <option value="Faith Christian">
+  <option value="Ginger Snapp">
+  <option value="Heidi Clare">
+  <option value="Howie Doohan">
+  <option value="I. Pullem">
+  <option value="Ivy Leage">
+  <option value="Melody Music">
+  <option value="Noah Lott">
+  <option value="Ray Gunn">
+  <option value="Rocky Mountain">
+  <option value="Sue Flay">
+  <option value="Tim Burr">
+  <option value="Virginia Beach">  
+ </datalist>
+
+</div>
+
+	  <!-- This <div> with the float keeps the 
+Controls packing up to the left and inside the 
+w3-container.  -->
+ <div style="float: left; margin-right: 5px">
+
+<p>
+<input type="text" name="client-adrs" id="client-adrs" maxlength="30" disabled="true" placeholder="Selected Client">
+</p>
+<p>
+<label for="street-adrs">Shipping Address</label>
+</p>
+<textarea form="" name="street-adrs" id="street-adrs" rows="5" cols="50" style="resize:none" maxlength="50" readonly="true" >
+1212 Misty Mountain Lane, Greenville, CB 77556
+</textarea>
+</div>
+	  
+<!-- Broker Info -->	  
+<div name="broker-Inf0" style="align-self: auto">
+	
+<p>
+<input type="text" name="broker-info" id="broker-info" maxlength="30" disabled="true" placeholder="Morgan Silver">
+</p>
+<p>
+<label for="street-adrs">Broker Information</label>
+</p>
+<textarea form="" name="street-adrs" id="street-adrs" rows="5" cols="50" style="resize: none; " maxlength="50" readonly="true" >
+Broker Information goes here.
+</textarea>	
+
+ </div>
+<!-- END OF TAB 3 DIVISION --> 
+</div>	
+
+	
+</body>
+<script>
+/*	*/
+
+</script>	
+</html>
